@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style type="text/css">
+    a{
+        text-decoration:none;
+        }
+    </style>
+        <title>
+            主页
+        </title>
+    </head>
+    <body>
+        <a href="{% url 'resultparser:record' %}">
+        <button>录入</button>
+        </a>
+        <a href="{% url 'resultparser:search' %}">
+        <button>查询</button>
+        </a>
+    </body>
+</html>

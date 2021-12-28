@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+input{
+width:1000px;
+    }
+textarea{
+width:1000px;
+height:200px;
+    }
+</style>
+<title>
+录入
+</title>
+</head>
+<body>
+<form action="{% url 'resultparser:index' %}" method="post">
+{% csrf_token %}
+Project:<br/>
+<input type="text" name="Project"/><br/>
+Test suite:<br/>
+<input type="text"/><br/>
+Module:<br/>
+<input type="text"/><br/>
+TestCase:<br/>
+<input type="text"/><br/>
+Failure:<br/>
+<textarea></textarea>
+<br/>
+Reason:<br/>
+<textarea></textarea>
+<br/>
+<input type="submit" value="Submit"/><br/>
+</form>
+</body>
+</html>

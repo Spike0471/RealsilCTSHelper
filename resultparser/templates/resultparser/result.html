@@ -15,20 +15,30 @@ height:200px;
 </title>
 </head>
 <body>
-<form action="{% url 'resultparser:index' %}" method="post">
-{% csrf_token %}
-Project:<br/>
-<input type="text" name="Project"/><br/>
-Test suite:<br/>
-<input type="text"/><br/>
-Module:<br/>
-<input type="text"/><br/>
-TestCase:<br/>
-<input type="text"/><br/>
-Failure:<br/>
-<textarea></textarea>
-<br/>
-<input type="submit" value="Submit"/><br/>
-</form>
+<table border="1">
+<tr>
+<th>Project</th>
+</tr>
+<tr><td>{{ Project }}</td></tr>
+<tr><th>Test suite</th></tr>
+<tr><td>{{ TestSuite }}</td></tr>
+<tr><th>Module</th></tr>
+<tr><td>{{ Module }}</td></tr>
+<tr><th>Testcase</th></tr>
+<tr><td>{{ Testcase }}</td></tr>
+</table>
+<tr><th>Known failures:</th></tr>
+<table border="1">
+{% for qa in QAMatches %}
+<tr>
+<th>Failure</th>
+<th>Reason</th>
+</tr>
+<tr>
+<td>{{ qa.failure }}</td>
+<td>{{ qa.reason }}</td>
+</tr>
+{% endfor %}
+</table>
 </body>
 </html>

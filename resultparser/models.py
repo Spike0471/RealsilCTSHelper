@@ -4,6 +4,7 @@ from django.db import models
 class SimpleQA(models.Model):
     project = models.CharField(max_length=30,default = ' ')
     test_suite = models.CharField(max_length=10,default= 'CTS')
+    dbno = models.CharField(max_length=30,blank=True)
     key1 = models.CharField(max_length=200)
     key2 = models.CharField(max_length=200)
     failure = models.TextField()
